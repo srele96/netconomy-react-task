@@ -1,0 +1,73 @@
+.messageWrapper {
+  /* allow children to use margin-auto */
+  display: flex;
+}
+
+/* separate messages */
+.messageWrapper:not(:last-child) {
+  padding-bottom: .5rem;
+}
+
+.message {
+  /* contain the ::before element */
+  position: relative;
+  /* dont let message go too wide or too short */
+  max-width: 70%;
+  min-width: 40%;
+  color: var(--white);
+  /* separate from edges */
+  padding: .5rem 1.75rem;
+  /* round borders */
+  border-radius: .5rem;
+  /* make div shrink around content */
+  display: inline-block;
+}
+
+.sent {
+  background-color: var(--header-background);
+  /* stick to right */
+  margin-left: auto;
+}
+
+.sent::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  /* disform rectangle to add sharp edge for chat bubble */
+  transform: skew(20deg, 20deg);
+  /* unequal width */
+  width: 30px;
+  height: 20px;
+  background-color: var(--header-background);
+  z-index: -1;
+}
+
+/* timestamp is on the right side for sent messages by me */
+.sent .timestamp {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.received {
+  background-color: var(--header-background-lighter);
+  /* stick received to the left */
+  margin-right: auto;
+}
+
+.received::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transform: skew(-20deg, -20deg);
+  width: 30px;
+  height: 20px;
+  background-color: var(--header-background-lighter);
+  z-index: -1;
+}
+
+.timestamp {
+  /* split timestamp from message content */
+  padding-top: .25rem;
+}

@@ -1,0 +1,47 @@
+.textInputWrapper {
+  /* inline text input and button to send */
+  display: flex;
+  /* separate them from edges */
+  padding: .75rem;
+  background-color: var(--header-background);
+}
+
+.textInputForm {
+  /* take full parent width */
+  flex: 1;
+  min-width: 100%;
+  max-width: 100%;
+  width: 100%;
+  /* allow children to stretch */
+  display: flex;
+}
+
+.textField {
+  /* stretch as much as possible horizontally */
+  flex: 1;
+  /* separate from send button */
+  margin-right: .1rem;
+  /* separate text inside from edges */
+  padding: .25rem .1rem;
+  /* round borders */
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  /* remove default input border */
+  border: 0;
+}
+
+.sendMessage {
+  /* change default button color */
+  background-color: var(--white);
+  /* remove default button color */
+  border: none;
+  /* separate button text from it's edges */
+  padding: .5rem .75rem;
+  /* right side rounded */
+  border-bottom-right-radius: 6px;
+  border-top-right-radius: 6px;
+  font-weight: bold;
+  color: var(--header-background);
+  /* indicate button is clickable */
+  cursor: pointer;
+}

@@ -1,0 +1,7 @@
+.logo {
+  /* responsive width, when below 300px, will take 100% */
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  display: block;
+}

@@ -1,0 +1,70 @@
+.person {
+  border: 0;
+  background-color: transparent;
+  /* indicate that it's clickable */
+  cursor: pointer;
+  /* inline content */
+  display: flex;
+  transition: .1s linear;
+  /* having transparent border prevents displacement of elements when
+  colored border is added for selected chat */
+  border-bottom: 1px solid transparent;
+}
+
+.person:hover {
+  background-color: rgba(0, 0, 0, .15);
+}
+
+/* open chat indicator */
+.open {
+  background-color: rgba(0, 0, 0, .15);
+  border-bottom: 1px solid var(--header-background) !important;
+}
+
+.avatarWrapper {
+  /* center image */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* split image from parent */
+  padding: .5rem;
+}
+
+.avatar {
+  object-fit: cover;
+  max-width: 40px;
+  max-height: 40px;
+  /* circle avatar */
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+}
+
+.nameStatusWrapper {
+  /* right side, name and status, whole width and height */
+  flex: 1;
+  height: 100%;
+  /* center vertically */
+  display: flex;
+  /* display name and status below each other */
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* stretch over whole parent to stay on the left */
+.name {
+  display: flex;
+  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
+}
+
+
+/* stretch over whole parent to stay on the left */
+.status {
+  display: flex;
+  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
+}

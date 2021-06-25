@@ -1,0 +1,9 @@
+.messages {
+  /* take whole right side */
+  width: 100%;
+  flex: 1;
+  /* separate content from edges */
+  padding: 3rem;
+  /* enable vertical scrolling */
+  overflow-y: auto;
+}

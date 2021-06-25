@@ -1,0 +1,10 @@
+.main {
+  /* vertically strech over remaining space */
+  flex: 1;
+  /* separate content from top and bottom edges */
+  padding: 1rem 0;
+  /* center main content */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

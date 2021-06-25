@@ -1,0 +1,13 @@
+.chatWindowLeft {
+  /* display content in rows */
+  display: flex;
+  flex-direction: column;
+  border-right: 2px solid var(--gray);
+  /* enable vertical scroll */
+  overflow-y: auto;
+  /* has 1 to 3 ratio compared to right side window */
+  flex: 1;
+  /* set width and let right side take the rest */
+  min-width: 300px;
+  max-width: 300px;
+}

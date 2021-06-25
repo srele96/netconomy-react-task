@@ -1,0 +1,82 @@
+.footer {
+  background-color: var(--footer-background);
+  /* split content from the sides */
+  padding: .75rem 4rem;
+}
+
+.hrSeparator {
+  /* split content top-bottom */
+  margin: .75rem 0;
+}
+
+.footerListGroupWrap {
+  /* display lists in one row */
+  display: flex;
+  /* evenly stretch them */
+  justify-content: stretch;
+  /* split content from borders */
+  padding: 1rem 1.5rem;
+}
+
+.footerListGroup {
+  /* each group take even space */
+  flex: 1;
+  /* remove default styling */
+  list-style: none;
+}
+
+/* separate each child vertically */
+.footerListGroup li:not(:last-child) {
+  padding-bottom: .5rem;
+}
+
+/* override default link color */
+.footerListGroup li a {
+  color: var(--gray);
+}
+
+.copyrightSocialsWrapper {
+  /* separate from top and bottom edges */
+  padding: .75rem 0;
+  /* display evenly, enable margin auto */
+  display: flex;
+}
+
+.copyright {
+  color: var(--gray);
+}
+
+.socials {
+  /* display social icons inline */
+  display: flex;
+  min-width: max-content;
+  /* stick to the right */
+  margin-left: auto;
+  color: var(--white);
+}
+
+.social {
+  /* align icon centrally inside */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* circle */
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  border: 1px solid var(--white);
+  font-size: .8rem;
+  color: var(--white);
+  transition: .1s linear;
+}
+
+.social:hover {
+  background-color: var(--white);
+  color: var(--gray);
+}
+
+/* separate from right neighbours */
+.social:not(:last-child) {
+  margin-right: 8px;
+}
