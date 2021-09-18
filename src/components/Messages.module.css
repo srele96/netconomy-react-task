@@ -5,5 +5,5 @@
   /* separate content from edges */
   padding: 3rem;
   /* enable vertical scrolling */
-  overflow-y: auto;
+  overflow-y: scroll;
 }

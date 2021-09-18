@@ -1,4 +1,4 @@
-import { useEffect, useState, useReducer, useRef } from 'react';
+import { useEffect, useState, useReducer } from 'react';
 import { fetchChatData } from '../modules/fetchChatData';
 import ChatLeftSide from './ChatLeftSide';
 import ChatRightSide from './ChatRightSide';
@@ -63,8 +63,6 @@ const Chat = () => {
   // track which chat window is currently opened for purpose of
   // adding new messages to it aswell as displaying it
   const [chatWindowIndexOpen, setChatWindowIndexOpen] = useState(null);
-  // enable scrolling down to last sent message
-  const scrollDownRef = useRef();
 
   // reseting state if error on loading json data occurs
   const resetState = () => {
@@ -77,22 +75,6 @@ const Chat = () => {
       });
     
     setError(null);
-  }
-
-  // This solution isn't ideal because of the stutter it gives on scrolling.
-  // However for the purpose of this project i believe this is satisfactory
-  const scrollToBottom = () => {
-    // Do two attempts to scroll to last message.
-    var scrollInterval = setInterval(function() {
-      // Calling line 79 after adding message doesn't fully scroll to bottom.
-      // However, calling line 79 twice after adding message does work.
-      scrollDownRef.current.scrollTop = scrollDownRef.current.scrollHeight;
-    }, 50);
-
-    // Stop scrolling down after two attempts.
-    setTimeout(() => {
-      clearInterval(scrollInterval);
-    }, 101)
   }
 
   // Adds new message to chatData state.
@@ -110,15 +92,11 @@ const Chat = () => {
         data: message,
       },
     });
-
-    scrollToBottom();
   }
 
   // Opens messages from selected chat window.
   const openChatWindow = (index) => {
     setChatWindowIndexOpen(index);
-
-    scrollToBottom();
   }
 
   // Loads json data to component state when component mounts.
@@ -154,7 +132,6 @@ const Chat = () => {
             />
             <ChatRightSide 
               chatWindowIndexOpen={chatWindowIndexOpen}
-              ref={scrollDownRef}
               chatData={chatData}
               addMessage={addMessage}
             />
